@@ -22,6 +22,10 @@ public class Activator : MonoBehaviour
         old = sr.color;
     }
 
+    void AddScore(){
+        PlayerPrefs.SetInt("Score", PlayerPrefs.GetInt("Score") + 100);
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -31,6 +35,8 @@ public class Activator : MonoBehaviour
 
         if(Input.GetKeyDown(key) && active){
             Destroy(note);
+            AddScore();
+            active = false;
         }
 
     }
