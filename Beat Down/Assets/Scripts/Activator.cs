@@ -41,6 +41,7 @@ public class Activator : MonoBehaviour
                 StartCoroutine(Pressed());
             }
             if(Input.GetKeyDown(key)&&active){
+                gm.GetComponent<GM>().addStreak();
                 Destroy(note);
                 AddScore();
                 active=false;
@@ -56,12 +57,19 @@ public class Activator : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
         active = true;
         if(col.gameObject.tag=="Note")
+        {
+            active = true;
             note= col.gameObject;
+        }
+        if(col.gameObject.tag=="WinNote")
+        {
+            PlayerPrefs.SetString("Win","Yes");
+        }    
     }
 
     void OnTriggerExit2D(Collider2D col){
         active = false;
-        gm.GetComponent<GM>().ResetStreak();
+        //gm.GetComponent<GM>().ResetStreak();
     }
 
     IEnumerator Pressed(){

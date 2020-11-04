@@ -14,6 +14,9 @@ public class GM : MonoBehaviour
         PlayerPrefs.SetInt("Streak",0);
         PlayerPrefs.SetInt("RockMater",25);
         PlayerPrefs.SetInt("Mult",1);
+        PlayerPrefs.SetInt("HighStreak",0);
+        PlayerPrefs.SetInt("Score",0);
+        PlayerPrefs.SetString("Win","No");
     }
 
     // Update is called once per frame
@@ -28,6 +31,12 @@ public class GM : MonoBehaviour
         }
         streak++;
         multiplier=streak/addnumber+1;
+
+        if(streak>PlayerPrefs.GetInt("HighStreak"))
+        {
+            PlayerPrefs.SetInt("HighStreak",streak);
+        }
+
         updateGUI();
     }
 
@@ -52,6 +61,12 @@ public class GM : MonoBehaviour
         streak=0;
         multiplier=1;
         updateGUI();
+        print("reset!");
+    }
+
+    public void win()
+    {
+        print("you win");
     }
 
 }
