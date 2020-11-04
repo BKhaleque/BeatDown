@@ -11,7 +11,9 @@ public class GM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        PlayerPrefs.SetInt("Streak",0);
+        PlayerPrefs.SetInt("RockMater",25);
+        PlayerPrefs.SetInt("Mult",1);
     }
 
     // Update is called once per frame
@@ -21,6 +23,9 @@ public class GM : MonoBehaviour
     }
 
     public void addStreak(){
+        if(PlayerPrefs.GetInt("RockMater")<100){
+            PlayerPrefs.SetInt("RockMater", PlayerPrefs.GetInt("RockMater")+1);
+        }
         streak++;
         multiplier=streak/addnumber+1;
         updateGUI();
@@ -37,8 +42,16 @@ public class GM : MonoBehaviour
 
     public void ResetStreak()
     {
+        if(PlayerPrefs.GetInt("RockMater")>=2){
+            PlayerPrefs.SetInt("RockMater", PlayerPrefs.GetInt("RockMater")-2);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("RockMater", 0);
+        }
         streak=0;
         multiplier=1;
         updateGUI();
     }
+
 }
