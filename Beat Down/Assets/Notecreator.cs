@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System;
 
 public class Notecreator : MonoBehaviour
 {
-    int[] timeline={1,1,1};
+    public string timelinename;
     public GameObject n;
     int time = 1;
     int i = 0;
@@ -22,6 +24,7 @@ public class Notecreator : MonoBehaviour
 
     void create()
     {
+        int[] timeline=PlayerPrefsX.GetIntArray(timelinename);
         Instantiate(n,transform.position,Quaternion.identity);
         if(i >= timeline.Length)
         {
