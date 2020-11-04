@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Note
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -14,8 +13,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Enemy
+  - Player
   - 
   - 
   - 
@@ -41,10 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Activator
-    uniqueID: 52224367
-    locked: 0
-  - name: Notes
-    uniqueID: 2685351701
     locked: 0
