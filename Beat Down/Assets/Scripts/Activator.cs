@@ -68,8 +68,12 @@ public class Activator : MonoBehaviour
     }
 
     void OnTriggerExit2D(Collider2D col){
+        //if(active == true)
+        //{
+        //    gm.GetComponent<GM>().ResetStreak();
+        //}
+        //
         active = false;
-        //gm.GetComponent<GM>().ResetStreak();
     }
 
     IEnumerator Pressed(){

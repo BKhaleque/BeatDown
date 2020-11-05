@@ -25,12 +25,25 @@ public class Notecreator : MonoBehaviour
     void create()
     {
         int[] timeline=PlayerPrefsX.GetIntArray(timelinename);
-        Instantiate(n,transform.position,Quaternion.identity);
+        GameObject newNote = Instantiate(n,transform.position,Quaternion.identity);
+        SpriteRenderer sr = newNote.GetComponent<SpriteRenderer>();
         if(i >= timeline.Length)
         {
             return;
         }
         time = timeline[i];
+        if(time==1)
+        {
+            sr.color=Color.red;
+        }
+        if(time==2)
+        {
+            sr.color=Color.blue;
+        }
+        if(time==3)
+        {
+            sr.color=Color.green;
+        }
         i++;
         Invoke("create", time);
     }

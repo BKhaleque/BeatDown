@@ -17,13 +17,13 @@ public class GM : MonoBehaviour
         PlayerPrefs.SetInt("HighStreak",0);
         PlayerPrefs.SetInt("Score",0);
         PlayerPrefs.SetString("Win","No");
-        int[] timeline1={1,1,1,2,2,1,1,1,2,1};
+        int[] timeline1={1,1,3,2,3,1,3,2,1,1};
         PlayerPrefsX.SetIntArray("timeline1",timeline1);
-        int[] timeline2={1,1,1,2,2,1,1,1,2,1};
+        int[] timeline2={1,2,2,3,2,1,1,3,2,1};
         PlayerPrefsX.SetIntArray("timeline2",timeline2);
-        int[] timeline3={1,1,1,2,2,1,1,1,2,1};
+        int[] timeline3={1,1,2,3,2,1,3,1,2,1};
         PlayerPrefsX.SetIntArray("timeline3",timeline3);
-        int[] timeline4={1,1,1,2,2,1,1,1,2,1};
+        int[] timeline4={1,3,1,2,2,3,1,3,3,1};
         PlayerPrefsX.SetIntArray("timeline4",timeline4);
     }
 
