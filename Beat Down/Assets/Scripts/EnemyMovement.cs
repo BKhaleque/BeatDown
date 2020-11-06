@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,12 +20,22 @@ public class EnemyMovement : MonoBehaviour
 
     public Transform playerTarget;
 
+    Activator[] acts;
+
+    GameObject[] activators;
     private void Awake()
     {
         enemyAnim = GetComponentInChildren<CharacterAnimation>();
         myBody = GetComponent<Rigidbody>();
-
+        
         playerTarget = GameObject.FindWithTag("Player").transform;
+        activators = GameObject.FindGameObjectsWithTag("Activator");
+        acts = new Activator[activators.Length];
+        for (int i = 0; i < activators.Length; i++)
+        {
+            acts[i] = activators[i].GetComponent<Activator>();
+        }
+        current_Attack_Time = 0;
     }
 
     // Start is called before the first frame update
@@ -40,6 +51,8 @@ public class EnemyMovement : MonoBehaviour
     {
         FollowTarget();
         Attack();
+
+      
     }
 
     void FollowTarget()
@@ -67,12 +80,21 @@ public class EnemyMovement : MonoBehaviour
     {
         if (!attackPlayer)
             return;
-        current_Attack_Time += Time.deltaTime;
-        if(current_Attack_Time > default_Attack_Time)
+         current_Attack_Time += Time.deltaTime;
+        for (int i = 0; i < acts.Length; i++)
         {
-            enemyAnim.EnemyAttack(Random.Range(0, 3));
-            current_Attack_Time = 0f;
+            
+            if (acts[i].missed && current_Attack_Time > default_Attack_Time)
+            {
+
+                enemyAnim.EnemyAttack(UnityEngine.Random.Range(0, 3));
+                current_Attack_Time = 0f;
+                break;
+            }
         }
+
+        
+        
         if(Vector3.Distance(transform.position, playerTarget.position) > attackDistance + chase_Player_After_Attack)
         {
             attackPlayer = false;
