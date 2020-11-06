@@ -8,9 +8,12 @@ public class Activator : MonoBehaviour
     public KeyCode key;
     bool active = false;
     GameObject note, gm;
-    public bool createMode;
+    public bool createMode, missed;
     Color old;
     public GameObject n;
+    float current_Attack_Time = 0f;
+
+    float default_attack_time = 2f;
     void Awake(){
         sr = GetComponent<SpriteRenderer>();
     }
@@ -20,6 +23,7 @@ public class Activator : MonoBehaviour
     {
         gm=GameObject.Find("GameManager");
         old = sr.color;
+        missed = false;
     }
 
     void AddScore(){
@@ -49,8 +53,19 @@ public class Activator : MonoBehaviour
             else if(Input.GetKeyDown(key)&&!active)
             {
                 gm.GetComponent<GM>().ResetStreak();
+                missed = true;
             }
         }
+        if (missed)
+        {
+            current_Attack_Time += Time.deltaTime;
+            if (current_Attack_Time> default_attack_time)
+            {
+                missed = false;
+                current_Attack_Time = 0f;
+            }
+        }
+        
 
     }
 
