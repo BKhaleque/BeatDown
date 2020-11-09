@@ -25,10 +25,10 @@ public class Activator : MonoBehaviour
         gm=GameObject.Find("GameManager");
         old = sr.color;
         missed = false;
-        if (PlayerPrefs.HasKey("Highscore")) 
-            highscore = PlayerPrefs.GetInt("HighScore");
+        if (PlayerPrefs.HasKey("Highscore"))
+            highScore = PlayerPrefs.GetInt("HighScore");
         else
-            PlayerPrefs.setInt("HighScore", 0)
+            PlayerPrefs.SetInt("HighScore", 0);
     }
 
     //add to score and replace high score if needed
