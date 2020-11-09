@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AttackUniversal : MonoBehaviour
 {
@@ -46,7 +47,7 @@ public class AttackUniversal : MonoBehaviour
                 playerHealth.health -= 2;
                 if(playerHealth.health <= 0)
                 {
-                    //end the game
+                    SceneManager.LoadScene("Highscore");
                 }
             }else if(hit[0].gameObject.tag == "Enemy")
             {
