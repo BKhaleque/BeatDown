@@ -12,6 +12,7 @@ public class Activator : MonoBehaviour
     Color old;
     public GameObject n;
     float current_Attack_Time = 0f;
+    int highScore;
 
     float default_attack_time = 2f;
     void Awake(){
@@ -24,10 +25,21 @@ public class Activator : MonoBehaviour
         gm=GameObject.Find("GameManager");
         old = sr.color;
         missed = false;
+        if (PlayerPrefs.HasKey("Highscore"))
+            highScore = PlayerPrefs.GetInt("HighScore");
+        else
+            PlayerPrefs.SetInt("HighScore", 0);
     }
 
+    //add to score and replace high score if needed
     void AddScore(){
+        
         PlayerPrefs.SetInt("Score",PlayerPrefs.GetInt("Score")+gm.GetComponent<GM>().GetScore());
+        if (PlayerPrefs.GetInt("Score")> highScore)
+        {
+            highScore = PlayerPrefs.GetInt("Score");
+            PlayerPrefs.SetInt("HighScore", PlayerPrefs.GetInt("Score") + gm.GetComponent<GM>().GetScore());
+        }
     }
 
     // Update is called once per frame
