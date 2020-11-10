@@ -23,11 +23,14 @@ public class PlayerAttack : MonoBehaviour
     private ComboState current_Combo_State;
 
     private EnemyMovement enemyMovement;
+
     void Awake()
     {
         player_Anim = GetComponentInChildren<CharacterAnimation>();
         enemy = GameObject.FindWithTag("Enemy");
         enemyMovement = enemy.GetComponent<EnemyMovement>();
+       // enemyKilled = false;
+
     }
 
     void Start() {
@@ -37,8 +40,16 @@ public class PlayerAttack : MonoBehaviour
 
     void Update()
     {
+        if (enemy == null)
+        {
+            
+            enemy = GameObject.FindWithTag("Enemy");
+            //enemyKilled = false;
+        }
         ComboAttacks();
         ResetComboState();
+
+
     }
 
     void ComboAttacks() {

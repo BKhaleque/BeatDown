@@ -1935,7 +1935,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  attackDistance: 2
+  attackDistance: 3
   playerTarget: {fileID: 0}
 --- !u!114 &6779361287803330318
 MonoBehaviour:

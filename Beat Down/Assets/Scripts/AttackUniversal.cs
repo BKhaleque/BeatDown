@@ -14,10 +14,13 @@ public class AttackUniversal : MonoBehaviour
     private bool enemyKilled;
     private GameObject spawner;
     private EnemySpawner enemySpawner;
+
+    //PlayerAttack playerAttack;
+
     // Start is called before the first frame update
     void Start()
     {
-        enemyKilled = false;
+      //  enemyKilled = false;
         spawner = GameObject.FindWithTag("EnemySpawner");
         enemySpawner = spawner.GetComponent<EnemySpawner>();
     }
@@ -57,6 +60,8 @@ public class AttackUniversal : MonoBehaviour
                 {
                     Destroy(hit[0].gameObject);
                     enemyKilled = true;
+                   // playerAttack = gameObject.GetComponent<PlayerAttack>();
+                   // playerAttack.enemyKilled = true;
                 }
             }
             gameObject.SetActive(false);

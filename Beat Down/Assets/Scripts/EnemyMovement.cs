@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Permissions;
 using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
@@ -20,9 +21,12 @@ public class EnemyMovement : MonoBehaviour
 
     public Transform playerTarget;
 
+    GameObject noteCatcher;
+
     Activator[] acts;
 
     GameObject[] activators;
+
     private void Awake()
     {
         enemyAnim = GetComponentInChildren<CharacterAnimation>();
@@ -44,6 +48,9 @@ public class EnemyMovement : MonoBehaviour
       //  StartCoroutine(WaitOnCreation());
         followPlayer = true;
         current_Attack_Time = default_Attack_Time;
+
+        noteCatcher = GameObject.FindWithTag("Catcher");
+        
     }
 
     // Update is called once per frame
