@@ -8,6 +8,7 @@ TagManager:
   - Activator
   - Enemy
   - EnemySpawner
+  - Catcher
   layers:
   - Default
   - TransparentFX

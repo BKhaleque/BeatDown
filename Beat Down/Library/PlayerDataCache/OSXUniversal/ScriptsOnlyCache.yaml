@@ -8,14 +8,16 @@ ScriptsOnlyBuild:
     - EnemyHealth
     - EnemyMovement
     - EnemySpawner
-    - EnengyBar
     - GM
     - HealthBarController
+    - HighScoreScreen
     - Note
+    - NoteCatcher
     - Notecreator
     - PPText
     - PlayerAttack
     - PlayerHealth
+    - setVolume
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     UnityEditor.TestRunner.dll:
@@ -31,6 +33,67 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.Slider
     - UnityEngine.UI.Text
   sceneClasses:
+    Assets/Scenes/Highscore.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 23
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 33
+      Script: {instanceID: 0}
+    - Class: 43
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 89
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 108
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 11244}
+    - Class: 114
+      Script: {instanceID: 11264}
+    - Class: 114
+      Script: {instanceID: 11856}
+    - Class: 114
+      Script: {instanceID: 12736}
+    - Class: 114
+      Script: {instanceID: 12802}
+    - Class: 114
+      Script: {instanceID: 13100}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 198
+      Script: {instanceID: 0}
+    - Class: 199
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
+      Script: {instanceID: 0}
     Assets/Scenes/Scene2.unity:
     - Class: 1
       Script: {instanceID: 0}
@@ -55,6 +118,8 @@ ScriptsOnlyBuild:
     - Class: 54
       Script: {instanceID: 0}
     - Class: 58
+      Script: {instanceID: 0}
+    - Class: 61
       Script: {instanceID: 0}
     - Class: 65
       Script: {instanceID: 0}
@@ -91,37 +156,39 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11582}
     - Class: 114
-      Script: {instanceID: 11854}
+      Script: {instanceID: 11816}
     - Class: 114
-      Script: {instanceID: 11972}
+      Script: {instanceID: 11856}
     - Class: 114
-      Script: {instanceID: 12068}
+      Script: {instanceID: 11974}
     - Class: 114
-      Script: {instanceID: 12136}
+      Script: {instanceID: 12070}
     - Class: 114
-      Script: {instanceID: 12570}
+      Script: {instanceID: 12138}
     - Class: 114
-      Script: {instanceID: 12588}
+      Script: {instanceID: 12572}
     - Class: 114
-      Script: {instanceID: 12602}
+      Script: {instanceID: 12590}
     - Class: 114
-      Script: {instanceID: 12734}
+      Script: {instanceID: 12604}
     - Class: 114
-      Script: {instanceID: 12746}
+      Script: {instanceID: 12736}
     - Class: 114
-      Script: {instanceID: 12882}
+      Script: {instanceID: 12748}
     - Class: 114
-      Script: {instanceID: 12988}
+      Script: {instanceID: 12884}
     - Class: 114
-      Script: {instanceID: 13040}
+      Script: {instanceID: 12990}
     - Class: 114
-      Script: {instanceID: 13098}
+      Script: {instanceID: 13042}
+    - Class: 114
+      Script: {instanceID: 13100}
     - Class: 114
       Script: {instanceID: 13128}
     - Class: 114
-      Script: {instanceID: 13140}
+      Script: {instanceID: 13132}
     - Class: 114
-      Script: {instanceID: 13142}
+      Script: {instanceID: 13146}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -147,6 +214,12 @@ ScriptsOnlyBuild:
     - Class: 223
       Script: {instanceID: 0}
     - Class: 224
+      Script: {instanceID: 0}
+    - Class: 241
+      Script: {instanceID: 0}
+    - Class: 243
+      Script: {instanceID: 0}
+    - Class: 245
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -329,6 +402,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: NoteCatcher
   - hash:
       serializedVersion: 2
       Hash: cc4274b586df3c02688bac01b88bd16c
@@ -541,7 +620,7 @@ ScriptsOnlyBuild:
     className: BeforeAfterTestCommandState
   - hash:
       serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+      Hash: 3cfce61a6dba447ecc05e2dc7270fba1
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: HighScoreScreen
@@ -661,6 +740,12 @@ ScriptsOnlyBuild:
     className: SignalEmitter
   - hash:
       serializedVersion: 2
+      Hash: 2122ad77b35f7f0129bab21633be2a24
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: setVolume
+  - hash:
+      serializedVersion: 2
       Hash: 7072231382eb3c4871b3dd75ad0227e1
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
@@ -692,4 +777,5 @@ ScriptsOnlyBuild:
   platform: 2
   scenePathNames:
   - Assets/Scenes/Scene2.unity
-  playerPath: C:/Users/Bobby/Desktop/BeatDownMac.app
+  - Assets/Scenes/Highscore.unity
+  playerPath: C:/Users/Bobby/Desktop/BeatDownMacV2.app
