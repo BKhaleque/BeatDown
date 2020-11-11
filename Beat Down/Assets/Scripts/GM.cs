@@ -11,6 +11,9 @@ public class GM : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+      QualitySettings.vSyncCount = 0;
+      Application.targetFrameRate = 60;
+
         PlayerPrefs.SetInt("Streak",0);
         PlayerPrefs.SetInt("RockMater",25);
         PlayerPrefs.SetInt("Mult",1);
