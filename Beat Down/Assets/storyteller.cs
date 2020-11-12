@@ -45,34 +45,36 @@ public class storyteller : MonoBehaviour
             story=story1;
             icon=icon_story1;
         }
-
-        if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
+        if(PlayerPrefs.GetInt("Pause")!=0)
         {
-            if(story[index]=="end")
+            if(Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
             {
+                if(story[index]=="end")
+                {
 
-            }
-            else
-            {
-                if(index<story.Length)
-                {
-                    index=index+1;
-                }else
-                {
-                    index=0;
                 }
-                text.GetComponent<Text>().text=story[index];
-                if(icon[index]=="")
+                else
                 {
-                    hidePicture(Icon.GetComponent<RawImage>());
-                    hidePicture(Iconmuse.GetComponent<RawImage>());
-                }
-                else if(icon[index]=="1"){
-                    presentPicture(Icon.GetComponent<RawImage>());
-                    hidePicture(Iconmuse.GetComponent<RawImage>());
-                }else if(icon[index]=="2"){
-                    presentPicture(Iconmuse.GetComponent<RawImage>());
-                    hidePicture(Icon.GetComponent<RawImage>());
+                    if(index<story.Length)
+                    {
+                        index=index+1;
+                    }else
+                    {
+                        index=0;
+                    }
+                    text.GetComponent<Text>().text=story[index];
+                    if(icon[index]=="")
+                    {
+                        hidePicture(Icon.GetComponent<RawImage>());
+                        hidePicture(Iconmuse.GetComponent<RawImage>());
+                    }
+                    else if(icon[index]=="1"){
+                        presentPicture(Icon.GetComponent<RawImage>());
+                        hidePicture(Iconmuse.GetComponent<RawImage>());
+                    }else if(icon[index]=="2"){
+                        presentPicture(Iconmuse.GetComponent<RawImage>());
+                        hidePicture(Icon.GetComponent<RawImage>());
+                    }
                 }
             }
         }
