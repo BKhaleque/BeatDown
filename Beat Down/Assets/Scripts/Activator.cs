@@ -14,6 +14,8 @@ public class Activator : MonoBehaviour
     float current_Attack_Time = 0f;
     int highScore;
 
+    ParticleSystem system;
+
     float default_attack_time = 2f;
     void Awake(){
         sr = GetComponent<SpriteRenderer>();
@@ -22,7 +24,8 @@ public class Activator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gm=GameObject.Find("GameManager");
+        system = GetComponentInChildren<ParticleSystem>();
+        gm =GameObject.Find("GameManager");
         old = sr.color;
         missed = false;
         if (PlayerPrefs.HasKey("Highscore"))
@@ -60,6 +63,7 @@ public class Activator : MonoBehaviour
                 gm.GetComponent<GM>().addStreak();
                 Destroy(note);
                 AddScore();
+                system.Play();
                 active=false;
             }
             else if(Input.GetKeyDown(key)&&!active)

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 686432086862553314}
   - component: {fileID: 686432086862553315}
   - component: {fileID: 686432086862553312}
+  - component: {fileID: 2020396138101323589}
   m_Layer: 0
   m_Name: Note 1
   m_TagString: Note
@@ -134,3 +135,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0.1
+--- !u!111 &2020396138101323589
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686432086862553313}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 0}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
