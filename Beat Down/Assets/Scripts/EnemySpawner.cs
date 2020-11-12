@@ -9,17 +9,17 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public void Spawn()
     {
-        Instantiate(enemy, new Vector3(14, -1, 0), Quaternion.identity);
+        Instantiate(enemy, new Vector3(16, -1, -3), Quaternion.identity);
     }
 }

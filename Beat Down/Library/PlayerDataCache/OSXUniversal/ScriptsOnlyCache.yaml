@@ -899,4 +899,4 @@ ScriptsOnlyBuild:
   - Assets/Scenes/start.unity
   - Assets/Scenes/Scene2.unity
   - Assets/Scenes/Highscore.unity
-  playerPath: /Users/kyleworrall/Desktop/BDUTD2/BeatDown/Beat Down/BeatDownV3Mac.app
+  playerPath: /Users/kyleworrall/Desktop/BDUTD2/BeatDown/Beat Down/BeatDownV4Mac.app
