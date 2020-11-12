@@ -2759,6 +2759,11 @@ PrefabInstance:
       propertyPath: attackDistance
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 8169500011211747974, guid: 9bfdba3a98bef134e953f393f4d09121,
+        type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bfdba3a98bef134e953f393f4d09121, type: 3}
 --- !u!1001 &9145123265691262044
