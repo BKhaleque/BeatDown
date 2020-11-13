@@ -14,6 +14,8 @@ public class Activator : MonoBehaviour
     float current_Attack_Time = 0f;
     int highScore;
     public AudioSource keySound;
+    
+    ParticleSystem system;
 
     float default_attack_time = 2f;
     void Awake(){
@@ -23,6 +25,7 @@ public class Activator : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        system = GetComponentInChildren<ParticleSystem>();
         gm=GameObject.Find("GameManager");
         keySound = GetComponent<AudioSource>();
         old = sr.color;
@@ -62,6 +65,7 @@ public class Activator : MonoBehaviour
                 gm.GetComponent<GM>().addStreak();
                 Destroy(note);
                 AddScore();
+                system.Play();
                 active=false;
             }
             else if(Input.GetKeyDown(key)&&!active)

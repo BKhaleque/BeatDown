@@ -18,6 +18,17 @@ public class Note : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        gameObject.transform.Translate(0.0f, -speed, 0.0f);
+        float ss=speed;
+        if(PlayerPrefs.GetInt("Pause")==0)
+        {
+            
+            gameObject.transform.Translate(0.0f, 0.0f, 0.0f);
+        }else
+        {        
+            gameObject.transform.Translate(0.0f, -speed, 0.0f);
+            
+        }
+
+        
     }
 }

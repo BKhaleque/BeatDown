@@ -42,6 +42,9 @@ public class GM : MonoBehaviour
         }
         streak++;
         multiplier=streak/addnumber+1;
+        GameObject canvas = GameObject.Find("Canvas");
+        PPText ppText = canvas.GetComponentInChildren<PPText>();
+        ppText.playAnim();
 
         if(streak>PlayerPrefs.GetInt("HighStreak"))
         {
