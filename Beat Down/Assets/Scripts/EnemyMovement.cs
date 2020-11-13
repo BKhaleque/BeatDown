@@ -31,7 +31,7 @@ public class EnemyMovement : MonoBehaviour
     {
         enemyAnim = GetComponentInChildren<CharacterAnimation>();
         myBody = GetComponent<Rigidbody>();
-        
+
         playerTarget = GameObject.FindWithTag("Player").transform;
         activators = GameObject.FindGameObjectsWithTag("Activator");
         acts = new Activator[activators.Length];
@@ -50,7 +50,7 @@ public class EnemyMovement : MonoBehaviour
         current_Attack_Time = default_Attack_Time;
 
         noteCatcher = GameObject.FindWithTag("Catcher");
-        
+
     }
 
     // Update is called once per frame
@@ -59,7 +59,7 @@ public class EnemyMovement : MonoBehaviour
         FollowTarget();
         Attack();
 
-      
+
     }
 
     void FollowTarget()
@@ -90,7 +90,7 @@ public class EnemyMovement : MonoBehaviour
          current_Attack_Time += Time.deltaTime;
         for (int i = 0; i < acts.Length; i++)
         {
-            
+
             if (acts[i].missed && current_Attack_Time > default_Attack_Time)
             {
 
@@ -100,13 +100,14 @@ public class EnemyMovement : MonoBehaviour
             }
         }
 
-        
-        
+
+
         if(Vector3.Distance(transform.position, playerTarget.position) > attackDistance + chase_Player_After_Attack)
         {
             attackPlayer = false;
             followPlayer = true;
         }
+
     }
 
     //IEnumerator WaitOnCreation() {

@@ -10,7 +10,6 @@ public class AttackUniversal : MonoBehaviour
     public LayerMask collisionLayer;
     public float radius = 1f;
     public float damage = 2f;
-
     private bool enemyKilled;
     private GameObject spawner;
     private EnemySpawner enemySpawner;
@@ -29,7 +28,7 @@ public class AttackUniversal : MonoBehaviour
     void Update()
     {
         DetectCollision();
-        if (enemyKilled) // then spawn another enemy 
+        if (enemyKilled) // then spawn another enemy
         {
             enemySpawner.Spawn();
            enemyKilled = false;
@@ -54,8 +53,14 @@ public class AttackUniversal : MonoBehaviour
                 }
             }else if(hit[0].gameObject.tag == "Enemy")
             {
+                Vector3 hitFX_Pos = hit[0].transform.position;
+                hitFX_Pos.y += 2.8f;
+                hitFX_Pos.x -= 0.5f;
+                Instantiate (hit_FX, hitFX_Pos, Quaternion.identity);
+
                 EnemyHealth enemyHealth = hit[0].gameObject.GetComponent<EnemyHealth>();
                 enemyHealth.health -= 2;
+                //Instantiate(hit_FX, transform.localPosition, Quaternion.identity);
                 if(enemyHealth.health <= 0)
                 {
                     Destroy(hit[0].gameObject);

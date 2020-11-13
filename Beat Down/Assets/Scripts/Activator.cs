@@ -13,6 +13,7 @@ public class Activator : MonoBehaviour
     public GameObject n;
     float current_Attack_Time = 0f;
     int highScore;
+    public AudioSource keySound;
 
     float default_attack_time = 2f;
     void Awake(){
@@ -23,6 +24,7 @@ public class Activator : MonoBehaviour
     void Start()
     {
         gm=GameObject.Find("GameManager");
+        keySound = GetComponent<AudioSource>();
         old = sr.color;
         missed = false;
         if (PlayerPrefs.HasKey("Highscore"))
@@ -33,7 +35,7 @@ public class Activator : MonoBehaviour
 
     //add to score and replace high score if needed
     void AddScore(){
-        
+
         PlayerPrefs.SetInt("Score",PlayerPrefs.GetInt("Score")+gm.GetComponent<GM>().GetScore());
         if (PlayerPrefs.GetInt("Score")> highScore)
         {
@@ -52,7 +54,7 @@ public class Activator : MonoBehaviour
         }
         else
         {
-            
+
             if(Input.GetKeyDown(key)){
                 StartCoroutine(Pressed());
             }
@@ -66,6 +68,7 @@ public class Activator : MonoBehaviour
             {
                 gm.GetComponent<GM>().ResetStreak();
                 missed = true;
+                keySound.Play();
             }
         }
         if (missed)
@@ -77,7 +80,7 @@ public class Activator : MonoBehaviour
                 current_Attack_Time = 0f;
             }
         }
-        
+
 
     }
 
@@ -91,7 +94,7 @@ public class Activator : MonoBehaviour
         if(col.gameObject.tag=="WinNote")
         {
             PlayerPrefs.SetString("Win","Yes");
-        }    
+        }
     }
 
     void OnTriggerExit2D(Collider2D col){

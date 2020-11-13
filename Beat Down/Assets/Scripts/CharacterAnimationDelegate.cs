@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class CharacterAnimationDelegate : MonoBehaviour
 {
+    //private ShakeCamera shakeCamera;
 
     public GameObject left_Arm_Attack, right_Arm_Attack, left_Leg_Attack_Point, right_Leg_Attack_Point;
+
+    void Awake() {
+    //shakeCamera = GameObject.FindWithTag(Tags.MAIN_CAMERA_TAG).GetComponent<ShakeCamera>();
+    }
 
     void Left_Arm_Attack_On()
     {
@@ -44,7 +49,7 @@ public class CharacterAnimationDelegate : MonoBehaviour
         {
             left_Leg_Attack_Point.SetActive(false);
         }
-   
+
     }
 
     void Right_Leg_Attack_On()
@@ -61,4 +66,29 @@ public class CharacterAnimationDelegate : MonoBehaviour
         }
 
     }
+
+    //void TagLeft_Arm()
+    //{
+      //left_Arm_Attack_Point.tag = Tags.LEFT_ARM_TAG;
+    //}
+
+    //void UnTagLeft_Arm()
+    //{
+      //left_Arm_Attack_Point.tag == Tags.UNTAGGED_TAG;
+    //}
+
+    //void TagLeft_Leg()
+    //{
+      //left_Leg_Attack_Point.tag = Tags.LEFT_LEG_TAG;
+    //}
+
+    //void UnTagLeft_Leg()
+    //{
+     //left_Leg_Attack_Point.tag = tags.UNTAGGED_TAG;
+    //}
+
+    //void ShakeCameraOnHit()
+    //{
+    //  shakeCamera.ShouldShake = true;
+    //}
 }
