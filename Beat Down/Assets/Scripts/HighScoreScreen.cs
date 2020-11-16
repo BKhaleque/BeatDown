@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using UnityEngine;
@@ -28,7 +28,7 @@ public class HighScoreScreen : MonoBehaviour
 
         if (PlayerPrefs.HasKey("Score"))
         {
-            highScore = PlayerPrefs.GetInt("Score");
+            currentScore = PlayerPrefs.GetInt("Score");
 
         }
         else
@@ -44,6 +44,6 @@ public class HighScoreScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

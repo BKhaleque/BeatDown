@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class AudioSourceTimerNew : MonoBehaviour
 
@@ -100,6 +102,12 @@ public class AudioSourceTimerNew : MonoBehaviour
           //noteLane = 1;
           noteLane += Random.Range(-3, 1);
         }
+        // After last note spawned wait 5 seconds then load high score screen
+        if(!moreNotes){
+          endTime += Time.deltaTime;
+          if(endTime > 5)
+            SceneManager.LoadScene("Highscore");
+          }
     }
 
         void LogTimes()
@@ -109,5 +117,7 @@ public class AudioSourceTimerNew : MonoBehaviour
           Debug.Log(audioSource.time);
         }
       }
+
+
 
   }
