@@ -97,4 +97,3 @@ public class storyteller : MonoBehaviour
 　　　　image.color = new Color(r, g, b, alpha);
     }
 }
-

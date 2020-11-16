@@ -34,10 +34,7 @@ public class pausemenu : MonoBehaviour
 
     public AudioMixer mixer;
 
-	void Start ()
-	{
 
-	}
 
 	void Update()
     {

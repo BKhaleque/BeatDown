@@ -8,6 +8,13 @@ public class GM : MonoBehaviour
     int streak=0;
     int addnumber=8;
     int basescore=100;
+
+
+    void Awake(){
+      if(PlayerPrefs.GetInt("Pause") == 0){
+        PlayerPrefs.SetInt("Pause", 1);
+      }
+    }
     // Start is called before the first frame update
     void Start()
     {
