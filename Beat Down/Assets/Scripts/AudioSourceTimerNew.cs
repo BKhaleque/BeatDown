@@ -15,6 +15,7 @@ public class AudioSourceTimerNew : MonoBehaviour
     public GameObject myPrefab, myPrefab2, myPrefab3, myPrefab4;
     public float fallTime;
     private int noteLane;
+    private float endTime;
 
     void Start()
     {
