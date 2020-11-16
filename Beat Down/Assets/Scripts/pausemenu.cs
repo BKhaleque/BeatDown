@@ -20,20 +20,20 @@ public class pausemenu : MonoBehaviour
 
 	public GUISkin mySkin;
 
-	public Texture textureBG; 
+	public Texture textureBG;
 
 	public Texture tex_startInfo;
 
 	public Texture tex_helpInfo;
 
-	public AudioSource music;  
+	public AudioSource music;
 
 	private int gameState=-1;
 
-    float horizontalValue;
-    
+    float horizontalValue = 10;
+
     public AudioMixer mixer;
-	
+
 	void Start ()
 	{
 
@@ -60,10 +60,10 @@ public class pausemenu : MonoBehaviour
         }
         SetLevel(horizontalValue);
     }
-	
+
 	void OnGUI()
 	{
-	
+
 		switch(gameState)
 		{
 			case STATE_PAUSEMENU:
@@ -75,10 +75,10 @@ public class pausemenu : MonoBehaviour
 			case STATE_EXIT:
 			break;
 		}
-		
- 
+
+
 	}
-	
+
 	void RenderMainMenu()
 	{
 		GUI.skin = mySkin;
@@ -104,9 +104,9 @@ public class pausemenu : MonoBehaviour
 		GUI.skin = mySkin;
 		GUI.DrawTexture(new Rect(0,0,Screen.width,Screen.height),textureBG);
         GUIStyle bb=new GUIStyle();
-		bb.normal.background = null; 
-		bb.normal.textColor=new Color(1,1,1); 
-		bb.fontSize = 28; 
+		bb.normal.background = null;
+		bb.normal.textColor=new Color(1,1,1);
+		bb.fontSize = 28;
 
 		GUI.Label(new Rect (Screen.width * 0.35f, Screen.height * 0.3f, Screen.width * 0.3f, Screen.height * 0.1f),"Volume："+horizontalValue.ToString("0.0")+"%",bb);
 
