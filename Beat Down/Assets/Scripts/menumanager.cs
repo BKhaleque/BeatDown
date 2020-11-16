@@ -66,10 +66,10 @@ public class menumanager : MonoBehaviour
 		{
 			gameState = STATE_STARTGAME;
 		}
-		if(GUI.Button(new Rect (Screen.width * 0.35f, Screen.height * 0.4f, Screen.width * 0.3f, Screen.height * 0.1f),"","option"))
-		{
-			gameState = STATE_OPTION;
-		}
+	//if(GUI.Button(new Rect (Screen.width * 0.35f, Screen.height * 0.4f, Screen.width * 0.3f, Screen.height * 0.1f),"","option"))
+		//{
+		//	gameState = STATE_OPTION;
+		//}
 		if(GUI.Button(new Rect (Screen.width * 0.35f, Screen.height * 0.6f, Screen.width * 0.3f, Screen.height * 0.1f),"","help"))
 		{
 			gameState = STATE_HELP;
