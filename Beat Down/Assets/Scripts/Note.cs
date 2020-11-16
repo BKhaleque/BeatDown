@@ -19,16 +19,18 @@ public class Note : MonoBehaviour
     void Update()
     {
         float ss=speed;
-        if(PlayerPrefs.GetInt("Pause")==0)
+        if(PlayerPrefs.GetInt("Pause")==1)
         {
-            
+
             gameObject.transform.Translate(0.0f, 0.0f, 0.0f);
-        }else
-        {        
+
+        }else if(PlayerPrefs.GetInt("Pause")==0)
+
+        {
             gameObject.transform.Translate(0.0f, -speed, 0.0f);
-            
+
         }
 
-        
+
     }
 }

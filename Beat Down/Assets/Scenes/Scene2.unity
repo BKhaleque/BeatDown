@@ -25916,6 +25916,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: pausemanager
       objectReference: {fileID: 0}
+    - target: {fileID: 2432434804265696145, guid: 8f10da0e3407d4a37a108ea1c87b1488,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5291980089318168250, guid: 8f10da0e3407d4a37a108ea1c87b1488,
         type: 3}
       propertyPath: music
