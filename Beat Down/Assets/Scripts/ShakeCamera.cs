@@ -7,7 +7,7 @@ public class ShakeCamera : MonoBehaviour
 
   public float power = 0.2f;
   public float duration = 0.2f;
-  public float slowDownAmount = 1f;
+  public float slowDownAmount = 0f;
   private bool shouldShake;
   private float initialDuration;
 

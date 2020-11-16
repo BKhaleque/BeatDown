@@ -14,7 +14,7 @@ public class Activator : MonoBehaviour
     float current_Attack_Time = 0f;
     int highScore;
     public AudioSource keySound;
-    
+    public AudioSource noteHitSound;
     ParticleSystem system;
 
     float default_attack_time = 2f;
@@ -28,6 +28,7 @@ public class Activator : MonoBehaviour
         system = GetComponentInChildren<ParticleSystem>();
         gm=GameObject.Find("GameManager");
         keySound = GetComponent<AudioSource>();
+        noteHitSound = GetComponent<AudioSource>();
         old = sr.color;
         missed = false;
         if (PlayerPrefs.HasKey("Highscore"))
@@ -67,6 +68,7 @@ public class Activator : MonoBehaviour
                 AddScore();
                 system.Play();
                 active=false;
+                noteHitSound.Play();
             }
             else if(Input.GetKeyDown(key)&&!active)
             {

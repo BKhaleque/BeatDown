@@ -7,35 +7,36 @@ public class AttackUniversal : MonoBehaviour
 {
     public bool is_Player, is_Enemy;
     public GameObject hit_FX;
+    public GameObject enemy_exp;
     public LayerMask collisionLayer;
     public float radius = 1f;
     public float damage = 2f;
     private bool enemyKilled;
     private GameObject spawner;
     private EnemySpawner enemySpawner;
+    //private CharacterAnimation enemyDeath;
 
     //PlayerAttack playerAttack;
 
-    // Start is called before the first frame update
     void Start()
     {
-      //  enemyKilled = false;
+
         spawner = GameObject.FindWithTag("EnemySpawner");
         enemySpawner = spawner.GetComponent<EnemySpawner>();
+        //enemyDeath = GameObject.FindWithTag(Tags.ENEMY_TAG).GetComponentInChildren<CharacterAnimation>();
     }
 
-    // Update is called once per frame
+
     void Update()
     {
         DetectCollision();
-        if (enemyKilled) // then spawn another enemy
+        if (enemyKilled)
         {
             enemySpawner.Spawn();
            enemyKilled = false;
         }
     }
 
-    //Check collision with player or enemy and take away health accordingly
 
     void DetectCollision()
     {
@@ -60,13 +61,16 @@ public class AttackUniversal : MonoBehaviour
 
                 EnemyHealth enemyHealth = hit[0].gameObject.GetComponent<EnemyHealth>();
                 enemyHealth.health -= 2;
-                //Instantiate(hit_FX, transform.localPosition, Quaternion.identity);
                 if(enemyHealth.health <= 0)
                 {
+                    Vector3 enemy_exp_Pos = hit[0].transform.position;
+                    enemy_exp_Pos.y += 1.8f;
+                    enemy_exp_Pos.x -= 0.5f;
+                    Instantiate (enemy_exp, enemy_exp_Pos, Quaternion.identity);
                     Destroy(hit[0].gameObject);
                     enemyKilled = true;
-                   // playerAttack = gameObject.GetComponent<PlayerAttack>();
-                   // playerAttack.enemyKilled = true;
+
+
                 }
             }
             gameObject.SetActive(false);

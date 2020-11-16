@@ -28,7 +28,7 @@ public class AudioSourceTimerNew : MonoBehaviour
                                      32.41506f  , 32.71692f  , 32.99556f  , 33.2742f  , 33.57605f  , 33.87791f  , 34.15656f  , 34.43519f  , 34.73705f  , 35.01569f  ,
                                      35.29433f  , 35.59619f  , 35.87483f  , 36.17669f  , 36.47855f  , 36.75719f  , 37.05905f  , 37.36091f  , 37.63955f  , 37.96463f  ,
                                      38.24327f  , 38.5219f  , 38.80054f  , 39.1024f  , 39.38104f  , 39.65968f  , 39.96154f  , 40.24018f  , 40.54204f  , 40.8439f  ,
-                                     41.09932f  , 41.40118f  , 41.9406f  , 42.5854f  , 43.21234f  , 43.76962f  , 44.35011f  , 44.93061f  , 45.51111f  , 46.04517f  ,
+                                     41.09932f  , 41.40118f  , 41.9406f  , 42.5154f  , 43.21234f  , 43.76962f  , 44.35011f  , 44.93061f  , 45.51111f  , 46.04517f  ,
                                      46.60245f  , 47.18295f  , 47.76345f  , 48.36716f  , 48.94767f  , 49.52816f  , 50.10866f  , 50.6195f  , 51.22322f  , 51.82694f  ,
                                      52.40744f  , 52.98794f  , 53.54522f  , 54.12571f  , 54.65977f  , 55.24027f  , 55.82077f  , 56.35483f  , 56.95855f  , 57.39973f  ,
                                      57.72481f  , 59.6985f  , 60.0468f , 61.9044f  , 62.27592f  , 64.20318f  , 64.59792f  , 64.89977f  , 65.20163f  , 65.4f, 66.61805f,
@@ -63,6 +63,7 @@ public class AudioSourceTimerNew : MonoBehaviour
 
         void Iterate()
         {
+
           if (noteLane == 1 && moreNotes && audioSource.time >= iterator.Current - fallTime ) //-timings after iterator.Current
         {
           GameObject newNote = Instantiate(myPrefab,transform.position,Quaternion.identity);
@@ -99,11 +100,11 @@ public class AudioSourceTimerNew : MonoBehaviour
           //noteLane = 1;
           noteLane += Random.Range(-3, 1);
         }
-      }
+    }
 
         void LogTimes()
         {
-          if (Input.GetKeyDown(KeyCode.Return))
+          if (Input.GetKeyDown(KeyCode.Space))
         {
           Debug.Log(audioSource.time);
         }

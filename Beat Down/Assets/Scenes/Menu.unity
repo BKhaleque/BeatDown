@@ -262,7 +262,7 @@ MonoBehaviour:
   mySkin: {fileID: 11400000, guid: c6ac6a9eba29cf64fb7ccf66148f9562, type: 2}
   textureBG: {fileID: 2800000, guid: 6c7ff2119eecadf458fca8f165d22109, type: 3}
   tex_startInfo: {fileID: 2800000, guid: 6c7ff2119eecadf458fca8f165d22109, type: 3}
-  tex_helpInfo: {fileID: 2800000, guid: 6c7ff2119eecadf458fca8f165d22109, type: 3}
+  tex_helpInfo: {fileID: 2800000, guid: 6f37253be5308476ea51c0a7443b59f9, type: 3}
   music: {fileID: 0}
 --- !u!1 &430982510
 GameObject:
